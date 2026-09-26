@@ -1,6 +1,5 @@
 /* ============================================================
-   DOCUMIND AI CHATBOT
-   COMPLETE RESPONSIVE STYLESHEET
+   AI CHATBOT - COMPLETE STYLE.CSS
    ============================================================ */
 
 
@@ -14,16 +13,16 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     width: 100%;
     height: 100%;
 }
 
 body {
-    width: 100%;
-    min-height: 100%;
     background: #07080d;
     color: #f5f5f7;
+
     font-family:
         Inter,
         -apple-system,
@@ -41,7 +40,6 @@ input {
 }
 
 button {
-    border: none;
     cursor: pointer;
 }
 
@@ -63,10 +61,9 @@ textarea {
     background:
         radial-gradient(
             circle at 70% 20%,
-            rgba(89, 76, 255, 0.08),
+            rgba(90, 70, 255, 0.08),
             transparent 35%
         ),
-
         #07080d;
 
     overflow: hidden;
@@ -91,8 +88,8 @@ textarea {
     background:
         linear-gradient(
             180deg,
-            #0c0e15 0%,
-            #090b11 100%
+            #0c0e15,
+            #090b11
         );
 
     border-right: 1px solid #20232e;
@@ -108,6 +105,7 @@ textarea {
 .brand {
     display: flex;
     align-items: center;
+
     gap: 15px;
 
     margin-bottom: 28px;
@@ -120,6 +118,8 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
 
     border-radius: 17px;
 
@@ -139,9 +139,10 @@ textarea {
 }
 
 .brand h1 {
+    color: #ffffff;
+
     font-size: 19px;
     font-weight: 750;
-    letter-spacing: -0.3px;
 }
 
 .brand span {
@@ -185,11 +186,6 @@ textarea {
 
     font-size: 16px;
     font-weight: 650;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
 }
 
 .new-chat-btn span {
@@ -199,15 +195,9 @@ textarea {
 
 .new-chat-btn:hover {
     background:
-        linear-gradient(
-            135deg,
-            rgba(91, 73, 220, 0.28),
-            rgba(53, 68, 150, 0.2)
-        );
+        rgba(100, 80, 255, 0.2);
 
     border-color: #7560ff;
-
-    transform: translateY(-1px);
 }
 
 
@@ -251,15 +241,12 @@ textarea {
     color: #b9bdca;
 
     text-align: left;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
 }
 
 .sidebar-item span {
     width: 24px;
+
+    flex-shrink: 0;
 
     text-align: center;
 
@@ -273,36 +260,35 @@ textarea {
 
 .sidebar-item.active {
     background:
-        linear-gradient(
-            135deg,
-            rgba(86, 73, 207, 0.2),
-            rgba(67, 75, 170, 0.12)
-        );
+        rgba(86, 73, 207, 0.18);
 
-    border-color: rgba(105, 87, 255, 0.28);
+    border-color:
+        rgba(105, 87, 255, 0.28);
 
     color: #ffffff;
 }
 
 
 /* ============================================================
-   RECENT CHATS
+   RECENT
    ============================================================ */
 
 .recent-chats {
     display: flex;
     flex-direction: column;
+
     gap: 6px;
 }
 
 .recent-empty {
+    padding: 6px 10px;
+
     color: #6e7485;
 
     font-size: 13px;
 
-    padding: 6px 10px;
-
     overflow: hidden;
+
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -375,8 +361,6 @@ textarea {
     color: #747b8f;
 
     font-size: 12px;
-
-    transition: color 0.2s ease;
 }
 
 .clear-btn:hover {
@@ -389,9 +373,10 @@ textarea {
    ============================================================ */
 
 .main {
+    width: calc(100% - 318px);
+
     min-width: 0;
 
-    width: calc(100% - 318px);
     height: 100vh;
 
     display: flex;
@@ -402,7 +387,7 @@ textarea {
 
 
 /* ============================================================
-   TOP BAR
+   TOPBAR
    ============================================================ */
 
 .topbar {
@@ -419,13 +404,12 @@ textarea {
     border-bottom: 1px solid #1b1e27;
 
     background:
-        rgba(7, 8, 13, 0.9);
+        rgba(7, 8, 13, 0.92);
 }
 
 .page-title {
     font-size: 21px;
     font-weight: 750;
-    letter-spacing: -0.5px;
 }
 
 .page-subtitle {
@@ -493,16 +477,6 @@ textarea {
     color: #d5d8e2;
 
     font-size: 23px;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-.icon-btn:hover {
-    background: rgba(255, 255, 255, 0.06);
-
-    transform: rotate(15deg);
 }
 
 
@@ -515,10 +489,10 @@ textarea {
 
     flex: 1 1 auto;
 
-    overflow-y: auto;
-    overflow-x: hidden;
-
     padding: 10px 34px 20px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 
     scrollbar-width: thin;
     scrollbar-color: #303442 transparent;
@@ -526,10 +500,6 @@ textarea {
 
 .chat-area::-webkit-scrollbar {
     width: 7px;
-}
-
-.chat-area::-webkit-scrollbar-track {
-    background: transparent;
 }
 
 .chat-area::-webkit-scrollbar-thumb {
@@ -573,6 +543,7 @@ textarea {
     margin-bottom: 18px;
 
     border: 1px solid rgba(103, 87, 255, 0.7);
+
     border-radius: 50%;
 
     box-shadow:
@@ -599,9 +570,6 @@ textarea {
     color: white;
 
     font-size: 27px;
-
-    box-shadow:
-        0 0 25px rgba(95, 83, 255, 0.45);
 }
 
 
@@ -610,11 +578,11 @@ textarea {
    ============================================================ */
 
 .welcome-badge {
+    min-height: 30px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    min-height: 30px;
 
     padding: 0 18px;
 
@@ -635,7 +603,7 @@ textarea {
 
 
 /* ============================================================
-   WELCOME HEADING
+   WELCOME TITLE
    ============================================================ */
 
 .welcome h2 {
@@ -685,7 +653,7 @@ textarea {
 
 
 /* ============================================================
-   SUGGESTIONS
+   SUGGESTION CARDS
    ============================================================ */
 
 .suggestions {
@@ -696,39 +664,40 @@ textarea {
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 10px;
+    gap: 12px;
 }
+
+
+/* MAIN BUTTON */
 
 .suggestion {
     width: 100%;
-    min-width: 0;
-    height: 60px;
+    height: 64px;
 
     display: flex;
-    align-items: center;
 
-    gap: 13px;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 14px;
 
     padding: 0 18px;
 
     border: 1px solid #272a34;
+
     border-radius: 16px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(20, 22, 31, 0.9),
-            rgba(14, 16, 24, 0.9)
+            rgba(20, 22, 31, 0.95),
+            rgba(14, 16, 24, 0.95)
         );
 
     color: #e9eaf0;
 
-    font-size: 14px;
-    font-weight: 650;
-
     text-align: left;
 
-    white-space: nowrap;
     overflow: hidden;
 
     transition:
@@ -737,28 +706,71 @@ textarea {
         background 0.2s ease;
 }
 
-.suggestion span {
-    width: 34px;
-    height: 34px;
 
-    flex-shrink: 0;
+/* ICON */
+
+.suggestion-icon {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    flex: 0 0 36px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
+
+    margin: 0;
 
     border-radius: 10px;
 
     background:
         rgba(255, 255, 255, 0.06);
 
-    font-size: 16px;
+    font-size: 17px;
+
+    line-height: 1;
 }
+
+
+/* TEXT */
+
+.suggestion-text {
+    min-width: 0;
+
+    flex: 1;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #e9eaf0;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    line-height: 1.2;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* HOVER */
 
 .suggestion:hover {
     transform: translateY(-2px);
 
-    border-color: rgba(108, 89, 255, 0.6);
+    border-color:
+        rgba(108, 89, 255, 0.6);
 
     background:
         rgba(37, 33, 65, 0.6);
@@ -815,8 +827,7 @@ textarea {
 }
 
 .message.ai {
-    background:
-        #11131b;
+    background: #11131b;
 
     border: 1px solid #252833;
 
@@ -895,7 +906,7 @@ textarea {
 
 
 /* ============================================================
-   INPUT WRAPPER
+   INPUT AREA
    ============================================================ */
 
 .input-wrapper {
@@ -936,6 +947,7 @@ textarea {
     padding: 8px 12px;
 
     border: 1px solid #292d39;
+
     border-radius: 10px;
 
     background: #11131b;
@@ -955,11 +967,10 @@ textarea {
 
     min-height: 92px;
 
-    position: relative;
-
     padding: 16px 16px 10px;
 
     border: 1px solid #292d3a;
+
     border-radius: 22px;
 
     background:
@@ -968,21 +979,14 @@ textarea {
             #10121b,
             #0d0f17
         );
-
-    box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.22);
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 .input-box:focus-within {
-    border-color: rgba(103, 87, 255, 0.75);
+    border-color:
+        rgba(103, 87, 255, 0.75);
 
     box-shadow:
-        0 0 0 2px rgba(103, 87, 255, 0.08),
-        0 15px 50px rgba(0, 0, 0, 0.3);
+        0 0 0 2px rgba(103, 87, 255, 0.08);
 }
 
 #messageInput {
@@ -1031,15 +1035,11 @@ textarea {
     align-items: center;
     justify-content: center;
 
+    border-radius: 10px;
+
     color: #9ba1b1;
 
     cursor: pointer;
-
-    border-radius: 10px;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
 }
 
 .attach-btn:hover {
@@ -1070,6 +1070,7 @@ textarea {
     justify-content: center;
 
     border: 1px solid #303441;
+
     border-radius: 7px;
 
     background: #151720;
@@ -1101,30 +1102,17 @@ textarea {
     color: white;
 
     font-size: 19px;
-
-    box-shadow:
-        0 7px 20px rgba(91, 80, 255, 0.3);
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.send-btn:hover {
-    transform: translateY(-2px);
 }
 
 .send-btn:disabled {
     opacity: 0.5;
 
     cursor: not-allowed;
-
-    transform: none;
 }
 
 
 /* ============================================================
-   INPUT FOOTER
+   FOOTER
    ============================================================ */
 
 .input-footer {
@@ -1143,7 +1131,7 @@ textarea {
 
 
 /* ============================================================
-   MODAL
+   DOCUMENT MODAL
    ============================================================ */
 
 .modal {
@@ -1154,6 +1142,7 @@ textarea {
     z-index: 1000;
 
     display: none;
+
     align-items: center;
     justify-content: center;
 
@@ -1171,6 +1160,7 @@ textarea {
 
 .modal-content {
     width: min(650px, 100%);
+
     max-height: 85vh;
 
     display: flex;
@@ -1179,13 +1169,10 @@ textarea {
     padding: 25px;
 
     border: 1px solid #2b2e3a;
+
     border-radius: 22px;
 
-    background:
-        #101219;
-
-    box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.5);
+    background: #101219;
 }
 
 .modal-header {
@@ -1225,20 +1212,12 @@ textarea {
     font-size: 22px;
 }
 
-.modal-close:hover {
-    background: rgba(255, 255, 255, 0.08);
-
-    color: white;
-}
-
 .document-list {
     flex: 1;
 
     min-height: 100px;
 
     overflow-y: auto;
-
-    padding-right: 5px;
 }
 
 .document-item {
@@ -1255,6 +1234,7 @@ textarea {
     margin-bottom: 8px;
 
     border: 1px solid #282b36;
+
     border-radius: 12px;
 
     background:
@@ -1294,10 +1274,6 @@ textarea {
     color: #ff7777;
 }
 
-.delete-document:hover {
-    background: rgba(255, 70, 70, 0.15);
-}
-
 .upload-large-btn {
     min-height: 50px;
 
@@ -1310,6 +1286,7 @@ textarea {
     margin-top: 15px;
 
     border: 1px dashed #45495a;
+
     border-radius: 12px;
 
     background: rgba(255, 255, 255, 0.02);
@@ -1317,26 +1294,15 @@ textarea {
     color: #b8bce0;
 
     cursor: pointer;
-
-    font-size: 13px;
-}
-
-.upload-large-btn:hover {
-    border-color: #7461ff;
-
-    background: rgba(104, 86, 255, 0.06);
-
-    color: white;
 }
 
 
 /* ============================================================
-   LIGHT THEME
+   LIGHT MODE
    ============================================================ */
 
 body.light {
     background: #f4f5f8;
-
     color: #171821;
 }
 
@@ -1346,7 +1312,6 @@ body.light .app {
 
 body.light .sidebar {
     background: #ffffff;
-
     border-color: #dedfe5;
 }
 
@@ -1355,16 +1320,12 @@ body.light .main {
 }
 
 body.light .topbar {
-    background: rgba(244, 245, 248, 0.92);
-
+    background: #f4f5f8;
     border-color: #dedfe5;
 }
 
 body.light .page-title,
-body.light .welcome h2 {
-    color: #171821;
-}
-
+body.light .welcome h2,
 body.light .brand h1 {
     color: #171821;
 }
@@ -1374,28 +1335,21 @@ body.light .sidebar-item {
 }
 
 body.light .sidebar-item.active {
-    color: #292b35;
-
     background: #f0efff;
-}
-
-body.light .new-chat-btn {
-    color: #343044;
-
-    background: #f3f1ff;
+    color: #292b35;
 }
 
 body.light .suggestion {
     background: #ffffff;
-
     border-color: #dedfe5;
+}
 
+body.light .suggestion-text {
     color: #252733;
 }
 
 body.light .input-box {
     background: #ffffff;
-
     border-color: #d9dbe3;
 }
 
@@ -1403,51 +1357,21 @@ body.light #messageInput {
     color: #20222c;
 }
 
-body.light #messageInput::placeholder {
-    color: #8b8f9c;
-}
-
 body.light .model-badge,
 body.light .icon-btn {
     background: #ffffff;
-
     border-color: #dedfe5;
-
     color: #353844;
-}
-
-body.light .system-status {
-    background: #ffffff;
-
-    border-color: #dedfe5;
 }
 
 body.light .message.ai {
     background: #ffffff;
-
     border-color: #dedfe5;
-
     color: #272934;
-}
-
-body.light .input-wrapper {
-    background:
-        linear-gradient(
-            180deg,
-            rgba(244, 245, 248, 0),
-            #f4f5f8 20%
-        );
 }
 
 body.light .modal-content {
     background: #ffffff;
-
-    border-color: #dedfe5;
-}
-
-body.light .document-item {
-    background: #f8f8fa;
-
     border-color: #dedfe5;
 }
 
@@ -1486,7 +1410,6 @@ body.light .document-item {
 
 @media (max-width: 768px) {
 
-    /* Allow the whole page to scroll */
     html,
     body {
         width: 100%;
@@ -1497,8 +1420,6 @@ body.light .document-item {
         overflow-y: auto;
     }
 
-
-    /* App becomes normal document flow */
     .app {
         width: 100%;
         height: auto;
@@ -1510,25 +1431,21 @@ body.light .document-item {
     }
 
 
-    /* --------------------------------------------------------
-       SIDEBAR
-       -------------------------------------------------------- */
+    /* SIDEBAR */
 
     .sidebar {
         width: 100%;
         height: auto;
-        min-height: auto;
 
         display: block;
 
-        padding: 18px 16px;
+        padding: 16px;
 
         border-right: none;
         border-bottom: 1px solid #20232e;
 
         overflow: visible;
     }
-
 
     .brand {
         margin-bottom: 16px;
@@ -1538,15 +1455,12 @@ body.light .document-item {
         width: 48px;
         height: 48px;
 
-        border-radius: 14px;
-
         font-size: 23px;
     }
 
     .brand h1 {
         font-size: 17px;
     }
-
 
     .new-chat-btn {
         height: 50px;
@@ -1555,41 +1469,38 @@ body.light .document-item {
     }
 
 
-    .sidebar-section {
-        margin-bottom: 16px;
-    }
+    /* CHAT + DOCUMENT BUTTONS */
 
-
-    /* Put Chat and Documents beside each other */
     .sidebar-section:nth-of-type(1) {
-        display: block;
+        margin-bottom: 12px;
     }
 
     .sidebar-section:nth-of-type(1) .sidebar-item {
-        width: calc(50% - 4px);
+        width: calc(50% - 5px);
 
         display: inline-flex;
 
-        margin-right: 4px;
+        margin-right: 5px;
     }
 
 
-    /* Recent */
+    /* HIDE RECENT ON PHONE */
+
     .sidebar-section:nth-of-type(2) {
         display: none;
     }
 
 
+    /* BOTTOM */
+
     .sidebar-bottom {
         display: flex;
         align-items: center;
-        justify-content: space-between;
 
         gap: 10px;
 
-        margin-top: 12px;
+        margin-top: 10px;
     }
-
 
     .system-status {
         flex: 1;
@@ -1601,17 +1512,12 @@ body.light .document-item {
         padding: 9px 12px;
     }
 
-
     .clear-btn {
         width: auto;
-
-        padding: 10px;
     }
 
 
-    /* --------------------------------------------------------
-       MAIN
-       -------------------------------------------------------- */
+    /* MAIN */
 
     .main {
         width: 100%;
@@ -1624,9 +1530,7 @@ body.light .document-item {
     }
 
 
-    /* --------------------------------------------------------
-       TOPBAR
-       -------------------------------------------------------- */
+    /* TOPBAR */
 
     .topbar {
         width: 100%;
@@ -1656,46 +1560,42 @@ body.light .document-item {
         width: 40px;
         height: 40px;
 
-        border-radius: 12px;
-
         font-size: 19px;
     }
 
 
-    /* --------------------------------------------------------
-       CHAT AREA
-       -------------------------------------------------------- */
+    /* CHAT */
 
     .chat-area {
         width: 100%;
         height: auto;
-        min-height: 0;
 
         flex: none;
 
-        overflow: visible;
+        padding:
+            0
+            14px
+            20px;
 
-        padding: 0 14px 20px;
+        overflow: visible;
     }
 
 
-    /* --------------------------------------------------------
-       WELCOME
-       -------------------------------------------------------- */
+    /* WELCOME */
 
     .welcome {
         width: 100%;
         height: auto;
+
         min-height: 0;
 
         padding:
-            35px
+            30px
             6px
-            30px;
+            25px;
 
         justify-content: flex-start;
     }
-
 
     .ai-orb {
         width: 72px;
@@ -1708,49 +1608,42 @@ body.light .document-item {
         width: 50px;
         height: 50px;
 
-        border-radius: 16px;
-
         font-size: 23px;
     }
-
 
     .welcome-badge {
         margin-bottom: 13px;
 
         font-size: 8px;
-
-        letter-spacing: 1.5px;
     }
-
 
     .welcome h2 {
         width: 100%;
 
         margin-bottom: 13px;
 
-        font-size: clamp(34px, 10vw, 48px);
+        font-size:
+            clamp(
+                32px,
+                10vw,
+                48px
+            );
 
         line-height: 1.04;
 
-        letter-spacing: -1.8px;
+        letter-spacing: -1.5px;
     }
-
 
     .welcome p {
         width: 100%;
-        max-width: 500px;
 
-        margin-bottom: 22px;
+        margin-bottom: 20px;
 
         font-size: 12px;
-
-        line-height: 1.55;
     }
 
 
-    /* --------------------------------------------------------
-       SUGGESTIONS
-       -------------------------------------------------------- */
+    /* SUGGESTIONS */
 
     .suggestions {
         width: 100%;
@@ -1760,26 +1653,34 @@ body.light .document-item {
         gap: 10px;
     }
 
-
     .suggestion {
         width: 100%;
         height: 56px;
 
         padding: 0 14px;
 
+        gap: 12px;
+
         border-radius: 14px;
+    }
 
+    .suggestion-icon {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+
+        flex-basis: 32px;
+
+        font-size: 15px;
+    }
+
+    .suggestion-text {
         font-size: 13px;
-
-        white-space: normal;
-
-        overflow: visible;
     }
 
 
-    /* --------------------------------------------------------
-       INPUT
-       -------------------------------------------------------- */
+    /* INPUT */
 
     .input-wrapper {
         width: 100%;
@@ -1792,64 +1693,40 @@ body.light .document-item {
         background: #07080d;
     }
 
-
     .input-box {
-        width: 100%;
-
         min-height: 85px;
 
-        padding: 13px 12px 8px;
+        padding:
+            13px
+            12px
+            8px;
 
         border-radius: 17px;
     }
 
-
     #messageInput {
-        min-height: 32px;
-
         font-size: 14px;
     }
-
-
-    .input-actions {
-        min-height: 34px;
-    }
-
-
-    .attach-btn {
-        width: 32px;
-        height: 32px;
-    }
-
 
     .input-hint {
         font-size: 9px;
     }
 
-
     .input-hint kbd {
         display: none;
     }
-
 
     .send-btn {
         width: 38px;
         height: 38px;
 
         margin-left: 8px;
-
-        border-radius: 11px;
-
-        font-size: 17px;
     }
-
 
     .input-footer {
         flex-direction: column;
 
         gap: 4px;
-
-        padding-top: 7px;
 
         text-align: center;
 
@@ -1857,9 +1734,7 @@ body.light .document-item {
     }
 
 
-    /* --------------------------------------------------------
-       MESSAGES
-       -------------------------------------------------------- */
+    /* MESSAGES */
 
     .message {
         max-width: 90%;
@@ -1870,14 +1745,11 @@ body.light .document-item {
     }
 
 
-    /* --------------------------------------------------------
-       MODAL
-       -------------------------------------------------------- */
+    /* MODAL */
 
     .modal {
         padding: 12px;
     }
-
 
     .modal-content {
         width: 100%;
@@ -1886,26 +1758,6 @@ body.light .document-item {
         padding: 18px;
 
         border-radius: 18px;
-    }
-
-
-    .modal-header h2 {
-        font-size: 18px;
-    }
-
-
-    .modal-header p {
-        font-size: 11px;
-    }
-
-
-    .document-item {
-        min-height: 52px;
-    }
-
-
-    .document-name {
-        max-width: 210px;
     }
 }
 
@@ -1920,59 +1772,44 @@ body.light .document-item {
         padding: 14px 12px;
     }
 
-
-    .brand {
-        gap: 10px;
-    }
-
-
     .brand-icon {
         width: 44px;
         height: 44px;
     }
 
-
     .brand h1 {
         font-size: 16px;
     }
-
 
     .brand span {
         font-size: 10px;
     }
 
-
     .topbar {
         padding: 12px;
     }
-
 
     .top-actions {
         gap: 6px;
     }
 
-
     .model-badge {
         padding: 0 9px;
     }
 
-
     .welcome {
-        padding-top: 28px;
+        padding-top: 25px;
     }
-
 
     .welcome h2 {
         font-size: 32px;
 
-        letter-spacing: -1.3px;
+        letter-spacing: -1.2px;
     }
-
 
     .welcome p {
         font-size: 11px;
     }
-
 
     .suggestion {
         height: 52px;
@@ -1980,55 +1817,20 @@ body.light .document-item {
         font-size: 12px;
     }
 
-
-    .suggestion span {
+    .suggestion-icon {
         width: 30px;
         height: 30px;
 
-        font-size: 14px;
+        min-width: 30px;
+        flex-basis: 30px;
     }
 
+    .suggestion-text {
+        font-size: 12px;
+    }
 
     .input-wrapper {
         padding-left: 10px;
         padding-right: 10px;
-    }
-}
-
-
-/* ============================================================
-   VERY SHORT SCREENS
-   ============================================================ */
-
-@media (max-height: 650px) and (min-width: 769px) {
-
-    .welcome {
-        justify-content: flex-start;
-
-        padding-top: 20px;
-    }
-
-    .ai-orb {
-        width: 65px;
-        height: 65px;
-
-        margin-bottom: 10px;
-    }
-
-    .orb-inner {
-        width: 45px;
-        height: 45px;
-    }
-
-    .welcome h2 {
-        font-size: 42px;
-    }
-
-    .welcome p {
-        margin-bottom: 12px;
-    }
-
-    .suggestion {
-        height: 50px;
     }
 }
