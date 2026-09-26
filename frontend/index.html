@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Chatbot</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="/css/style.css?v=3"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <h1>AI CHATBOT</h1>
+
+                <span>
+                    AI Knowledge Assistant
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NEW CHAT -->
+
+        <button
+            class="new-chat-btn"
+            id="newChatBtn"
+        >
+
+            <span>＋</span>
+
+            New Chat
+
+        </button>
+
+
+        <!-- WORKSPACE -->
+
+        <div class="sidebar-section">
+
+            <div class="section-title">
+                WORKSPACE
+            </div>
+
+
+            <button
+                class="sidebar-item active"
+                id="chatNav"
+            >
+
+                <span>💬</span>
+
+                Chat
+
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                id="documentsNav"
+            >
+
+                <span>📚</span>
+
+                Documents
+
+            </button>
+
+        </div>
+
+
+        <!-- RECENT -->
+
+        <div class="sidebar-section">
+
+            <div class="section-title">
+                RECENT
+            </div>
+
+
+            <div
+                id="recentChats"
+                class="recent-chats"
+            >
+
+                <div class="recent-empty">
+                    No recent chats
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        AI System
+                    </strong>
+
+                    <small>
+                        Online
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="clear-btn"
+                id="clearChatBtn"
+            >
+
+                🗑 Clear Chat
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <div class="page-title">
+                    AI Assistant
+                </div>
+
+                <div
+                    class="page-subtitle"
+                    id="documentStatus"
+                >
+                    Checking documents...
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <div class="model-badge">
+
+                    <span class="pulse"></span>
+
+                    Gemini
+
+                </div>
+
+
+                <button
+                    class="icon-btn"
+                    id="themeBtn"
+                    title="Toggle theme"
+                >
+
+                    ☼
+
+                </button>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             CHAT AREA
+        ================================================== -->
+
+        <section
+            class="chat-area"
+            id="chatArea"
+        >
+
+
+            <!-- WELCOME SCREEN -->
+
+            <div
+                class="welcome"
+                id="welcome"
+            >
+
+
+                <!-- AI ICON -->
+
+                <div class="ai-orb">
+
+                    <div class="orb-inner">
+                        ✦
+                    </div>
+
+                </div>
+
+
+                <!-- BADGE -->
+
+                <div class="welcome-badge">
+
+                    RAG POWERED AI
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <h2>
+
+                    Your documents,
+
+                    <span>
+                        intelligently understood.
+                    </span>
+
+                </h2>
+
+
+                <!-- DESCRIPTION -->
+
+                <p>
+
+                    Upload your PDFs and ask questions.
+                    AI Chatbot searches your documents
+                    and gives you contextual answers.
+
+                </p>
+
+
+                <!-- SUGGESTIONS -->
+
+                <div class="suggestions">
+
+
+                    <button
+                        class="suggestion"
+                        data-question="Summarize the main topics in this document."
+                    >
+
+                        <span>
+                            📄
+                        </span>
+
+                        <span>
+                            Summarize my document
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        class="suggestion"
+                        data-question="Explain the main concepts in simple words."
+                    >
+
+                        <span>
+                            💡
+                        </span>
+
+                        <span>
+                            Explain simply
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        class="suggestion"
+                        data-question="What are the most important points I should study?"
+                    >
+
+                        <span>
+                            🎯
+                        </span>
+
+                        <span>
+                            Important points
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        class="suggestion"
+                        data-question="Create a few questions from this document."
+                    >
+
+                        <span>
+                            🧠
+                        </span>
+
+                        <span>
+                            Generate questions
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             INPUT AREA
+        ================================================== -->
+
+        <div class="input-wrapper">
+
+
+            <!-- UPLOAD PREVIEW -->
+
+            <div
+                class="upload-preview"
+                id="uploadPreview"
+            ></div>
+
+
+            <!-- INPUT BOX -->
+
+            <div class="input-box">
+
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Ask anything about your documents..."
+                    rows="1"
+                ></textarea>
+
+
+                <div class="input-actions">
+
+
+                    <!-- FILE UPLOAD -->
+
+                    <label
+                        class="attach-btn"
+                        title="Upload PDF"
+                    >
+
+                        📎
+
+                        <input
+                            type="file"
+                            id="fileInput"
+                            accept=".pdf"
+                            hidden
+                        >
+
+                    </label>
+
+
+                    <!-- KEYBOARD HINT -->
+
+                    <div class="input-hint">
+
+                        <span>
+                            Enter to send
+                        </span>
+
+                        <kbd>
+                            ↵
+                        </kbd>
+
+                    </div>
+
+
+                    <!-- SEND -->
+
+                    <button
+                        id="sendBtn"
+                        class="send-btn"
+                    >
+
+                        ➤
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="input-footer">
+
+                <span>
+
+                    AI Chatbot can make mistakes.
+                    Verify important information.
+
+                </span>
+
+
+                <span>
+
+                    Powered by Gemini + RAG
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         DOCUMENT MODAL
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="documentModal"
+    >
+
+
+        <div class="modal-content">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+
+                <div>
+
+                    <h2>
+                        Your Documents
+                    </h2>
+
+                    <p>
+                        Manage your PDF knowledge base
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    id="closeModal"
+                >
+
+                    ×
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- DOCUMENT LIST -->
+
+            <div
+                class="document-list"
+                id="documentList"
+            >
+
+                Loading...
+
+            </div>
+
+
+
+            <!-- UPLOAD -->
+
+            <label class="upload-large-btn">
+
+                <span>
+                    ＋
+                </span>
+
+                Upload PDF
+
+
+                <input
+                    type="file"
+                    id="modalFileInput"
+                    accept=".pdf"
+                    hidden
+                >
+
+            </label>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script
+    src="/js/app.js?v=3"
+></script>
+
+
+</body>
+
+</html>
